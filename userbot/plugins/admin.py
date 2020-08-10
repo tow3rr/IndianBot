@@ -22,22 +22,22 @@ from telethon.tl.types import (ChannelParticipantsAdmins, ChatAdminRights,
                                ChatBannedRights, MessageEntityMentionName,
                                MessageMediaPhoto)
 
-from userbot import BOTLOG, BOTLOG_CHATID, CMD_HELP, bot 
+from userbot import BOTLOG, BOTLOG_CHATID, CMD_HELP, bot, BOTNAME
 from userbot.utils import register, errors_handler
 from userbot.utils import admin_cmd
 
 # =================== CONSTANT ===================
-PP_TOO_SMOL = "`The image is too small`"
-PP_ERROR = "`Failure while processing the image`"
-NO_ADMIN = "`I am not an admin nub nibba!`"
-NO_PERM = "`I don't have sufficient permissions! This is so sed. Alexa play Tera Baap Aaya`"
-NO_SQL = "`Running on Non-SQL mode!`"
+PP_TOO_SMOL = f"{BOTNAME}: `The image is too small`"
+PP_ERROR = f"{BOTNAME}: `Failure while processing the image`"
+NO_ADMIN = f"{BOTNAME}: `I am not an admin nub nibba!`"
+NO_PERM = f"{BOTNAME}: `I don't have sufficient permissions! This is so sed. Alexa play Tera Baap Aaya`"
+NO_SQL = f"`{BOTNAME}: Running on Non-SQL mode!`"
 
-CHAT_PP_CHANGED = "`Chat Picture Changed`"
-CHAT_PP_ERROR = "`Some issue with updating the pic,`" \
-                "`maybe coz I'm not an admin,`" \
-                "`or don't have enough rights.`"
-INVALID_MEDIA = "`Invalid Extension`"
+CHAT_PP_CHANGED = f"{BOTNAME}: `Chat Picture Changed`"
+CHAT_PP_ERROR = f"{BOTNAME}: `Some issue with updating the pic,`" \
+                f"{BOTNAME}: `maybe coz I'm not an admin,`" \
+                f"{BOTNAME}: `or don't have enough rights.`"
+INVALID_MEDIA = f"{BOTNAME}: `Invalid Extension`"
 
 BANNED_RIGHTS = ChatBannedRights(
     until_date=None,
