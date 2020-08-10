@@ -176,6 +176,36 @@ def admin_cmd(pattern=None, **args):
 
     return events.NewMessage(**args)
 
+def indianbot(pattern=None, **args):
+    stack = inspect.stack()
+    previous_stack_frame = stack[1]
+    file_test = Path(previous_stack_frame.filename)
+    file_test = file_test.stem.replace(".py", "")
+    allow_sudo = args.get("allow_sudo", False)   
+    if pattern is not None:
+        if pattern.startswith("\#"):
+            args["pattern"] = re.compile(pattern)
+        else:
+            args["pattern"] = re.compile("\." + pattern)
+            cmd = "." + pattern
+            try:
+                CMD_LIST[file_test].append(cmd)
+            except:
+                CMD_LIST.update({file_test: [cmd]})
+    args["outgoing"] = True
+    if allow_sudo:
+        args["from_users"] = list(Config.SUDO_USERS)
+        args["incoming"] = True
+        del args["allow_sudo"]
+    elif "incoming" in args and not args["incoming"]:
+        args["outgoing"] = True    
+    allow_edited_updates = False
+    if "allow_edited_updates" in args and args["allow_edited_updates"]:
+        allow_edited_updates = args["allow_edited_updates"]
+        del args["allow_edited_updates"]    
+    is_message_enabled = True
+    return events.NewMessage(**args)
+
 """ Userbot module for managing events.
  One of the main components of the userbot. """
 
