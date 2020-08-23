@@ -28,6 +28,8 @@ async def _(event):
               await conv.send_message("/fedstat")
               audio = await conv.get_response()
               final = ("If you would like to know more about the fedban reason in a specific federation, use /fbanstat <FedID>." , "")
+              if "Looks" in response.text:
+                    await event.edit("**Ah, Fuck U are banned in many feds check manually -__-**")
               await borg.send_message(event.chat_id, audio.text)
               await event.delete()
           except YouBlockedUserError:
