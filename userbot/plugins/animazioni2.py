@@ -12,7 +12,7 @@ import asyncio
 
 from telethon import events
 from userbot import CMD_HELP, ALIVE_NAME, bot
-from userbot.system import dev_cmd
+from userbot.system import admin_cmd
 from platform import uname
 
 # ================= CONSTANT =================
@@ -20,7 +20,7 @@ DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "Ilas"
 # ============================================
 
 
-@bot.on(dev_cmd(pattern=f"hypno", outgoing=True))
+@bot.on(admin_cmd(pattern=f"hypno", outgoing=True))
 async def _(event):
     if event.fwd_from:
         return
@@ -54,7 +54,7 @@ async def _(event):
             await event.edit(animation_chars[i % 15])
 
 
-@bot.on(dev_cmd(pattern=f"plane", outgoing=True))
+@bot.on(admin_cmd(pattern=f"plane", outgoing=True))
 async def _(event):
     if event.fwd_from:
         return                
@@ -76,7 +76,7 @@ async def _(event):
     await event.delete()
 
 
-@bot.on(dev_cmd(pattern=r"pula"))
+@bot.on(admin_cmd(pattern=r"pula"))
 async def _(event):
     if event.fwd_from:
         return
@@ -105,7 +105,7 @@ async def _(event):
         await event.edit(animation_chars[i % 12])
 
 
-@bot.on(dev_cmd(pattern="sega", outgoing=True))
+@bot.on(admin_cmd(pattern="sega", outgoing=True))
 async def _(event):
     if event.fwd_from:
         return
@@ -143,7 +143,7 @@ async def _(event):
             await event.edit(animation_chars[i % 8])
 
 
-@bot.on(dev_cmd(pattern=f"snake", outgoing=True))
+@bot.on(admin_cmd(pattern=f"snake", outgoing=True))
 async def _(event):
     if event.fwd_from:
         return
@@ -214,7 +214,7 @@ async def _(event):
             await event.edit(animation_chars[i % 27])
 
 
-@bot.on(dev_cmd(pattern=f"solarsystem", outgoing=True))
+@bot.on(admin_cmd(pattern=f"solarsystem", outgoing=True))
 async def _(event):
     if event.fwd_from:
         return
@@ -351,7 +351,7 @@ async def _(event):
             await event.edit(animation_chars[i % 549755813888])
 
 
-@bot.on(dev_cmd(pattern="sorpresa", outgoing=True))
+@bot.on(admin_cmd(pattern="sorpresa", outgoing=True))
 async def _(event):
     if event.fwd_from:
         return
