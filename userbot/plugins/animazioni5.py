@@ -12,10 +12,10 @@ import asyncio
 from collections import deque
 from telethon import events
 from userbot import CMD_HELP, bot
-from userbot.system import dev_cmd
+from userbot.system import admin_cmd
 
 
-@bot.on(dev_cmd(pattern=f"clock", outgoing=True))
+@bot.on(admin_cmd(pattern=f"clock", outgoing=True))
 async def _(event):
     if not event.text[0].isalpha() and event.text[0] not in ("/", "#", "@", "!"):
 	    if event.fwd_from:
@@ -26,7 +26,7 @@ async def _(event):
 		    await event.edit("".join(deq))
 		    deq.rotate(1)
 
-@bot.on(dev_cmd(pattern=f"moon", outgoing=True))
+@bot.on(admin_cmd(pattern=f"moon", outgoing=True))
 async def _(event):
     if not event.text[0].isalpha() and event.text[0] not in ("/", "#", "@", "!"):
 	    if event.fwd_from:
@@ -37,13 +37,13 @@ async def _(event):
 		    await event.edit("".join(deq))
 		    deq.rotate(1)
 
-@bot.on(dev_cmd(pattern=r"lmoon"))
+@bot.on(admin_cmd(pattern=r"lmoon"))
 async def _(event):
     if event.fwd_from:
         return 
     await event.edit("🌕🌕🌕🌕🌕🌕🌕🌕\n🌕🌕🌖🌔🌖🌔🌕🌕\n🌕🌕🌗🌔🌖🌓🌕🌕\n🌕🌕🌗🌔🌖🌓🌕🌕\n🌕🌕🌖🌓🌗🌔🌕🌕\n🌕🌕🌗🌑🌑🌓🌕🌕\n🌕🌕🌗👀🌑🌓🌕🌕\n🌕🌕🌘👄🌑🌓🌕🌕\n🌕🌕🌗🌑🌑🌒🌕🌕\n🌕🌖🌑🌑🌑🌑🌔🌕\n🌕🌘🌑🌑🌑🌑🌒🌕\n🌖🌑🌑🌑🌑🌑🌑🌔\n🌕🤜🏻🌑🌑🌑🌑🤛🏻🌕\n🌕🌖🌑🌑🌑🌑🌔🌕\n🌘🌑🌑🌑🌑🌑🌑🌒\n🌕🌕🌕🌕🌕🌕🌕🌕")
 
-@bot.on(dev_cmd(pattern=f"smoon", outgoing=True))
+@bot.on(admin_cmd(pattern=f"smoon", outgoing=True))
 async def _(event):
     if event.fwd_from:
         return
@@ -68,7 +68,7 @@ async def _(event):
             await asyncio.sleep(animation_interval)
             await event.edit(animation_chars[i % 8])
 
-@bot.on(dev_cmd(pattern=f"tmoon", outgoing=True))
+@bot.on(admin_cmd(pattern=f"tmoon", outgoing=True))
 async def _(event):
     if event.fwd_from:
         return
@@ -117,7 +117,7 @@ async def _(event):
             await asyncio.sleep(animation_interval)
             await event.edit(animation_chars[i % 117])
 
-@bot.on(dev_cmd("oh ?(.*)", outgoing=True))
+@bot.on(admin_cmd("oh ?(.*)", outgoing=True))
 async def lol(e):
     await e.edit(
 "\n██╗░░░░░░█████╗░██╗░░░░░"
@@ -127,7 +127,7 @@ async def lol(e):
 "\n███████╗╚█████╔╝███████╗"
 "\n╚══════╝░╚════╝░╚══════╝") 
  
-@bot.on(dev_cmd(pattern=f"ok", outgoing=True))
+@bot.on(admin_cmd(pattern=f"ok", outgoing=True))
 async def _(event):
     if event.fwd_from:
         return
@@ -161,7 +161,7 @@ async def _(event):
             await asyncio.sleep(animation_interval)
             await event.edit(animation_chars[i % 18])
 
-@bot.on(dev_cmd(pattern=f"wtf", outgoing=True))
+@bot.on(admin_cmd(pattern=f"wtf", outgoing=True))
 async def _(event):
     if event.fwd_from:
         return
