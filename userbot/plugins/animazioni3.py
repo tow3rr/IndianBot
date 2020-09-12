@@ -12,14 +12,14 @@ import asyncio
 from telethon import events
 from platform import uname
 from userbot import CMD_HELP, ALIVE_NAME, bot
-from userbot.system import dev_cmd
+from userbot.system import admin_cmd
 
 # ================= CONSTANT =================
 DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "100101110"
 # ============================================
 
 
-@bot.on(dev_cmd(pattern=f"avast", outgoing=True))
+@bot.on(admin_cmd(pattern=f"avast", outgoing=True))
 async def _(event):
     if event.fwd_from:
         return
@@ -48,7 +48,7 @@ async def _(event):
             await event.edit(animation_chars[i % 11])
 
 
-@bot.on(dev_cmd(pattern=f"avast1", outgoing=True))
+@bot.on(admin_cmd(pattern=f"avast1", outgoing=True))
 async def _(event):
     if event.fwd_from:
         return
@@ -77,7 +77,7 @@ async def _(event):
             await event.edit(animation_chars[i % 11])
 
 
-@bot.on(dev_cmd(pattern=f"call", outgoing=True))
+@bot.on(admin_cmd(pattern=f"call", outgoing=True))
 async def _(event):
     if event.fwd_from:
         return
@@ -113,7 +113,7 @@ async def _(event):
             await event.edit(animation_chars[i % 18])
 
 
-@bot.on(dev_cmd(pattern=f"hack", outgoing=True))
+@bot.on(admin_cmd(pattern=f"hack", outgoing=True))
 async def _(event):   
     if event.fwd_from:       
         return   
@@ -142,7 +142,7 @@ async def _(event):
             await event.edit(animation_chars[i % 12])
 
 
-@bot.on(dev_cmd(pattern=f"linux", outgoing=True))
+@bot.on(admin_cmd(pattern=f"linux", outgoing=True))
 async def _(event):
     if event.fwd_from:
         return
@@ -171,7 +171,7 @@ async def _(event):
             await event.edit(animation_chars[i % 11])
 
 
-@bot.on(dev_cmd(pattern=f"macos", outgoing=True))
+@bot.on(admin_cmd(pattern=f"macos", outgoing=True))
 async def _(event):
     if event.fwd_from:
         return
@@ -200,7 +200,7 @@ async def _(event):
             await event.edit(animation_chars[i % 11])
 
 
-@bot.on(dev_cmd(pattern=f"stock", outgoing=True))
+@bot.on(admin_cmd(pattern=f"stock", outgoing=True))
 async def _(event):
     if event.fwd_from:
         return
@@ -229,7 +229,7 @@ async def _(event):
             await event.edit(animation_chars[i % 11])
 
 
-@bot.on(dev_cmd(pattern=f"windows", outgoing=True))
+@bot.on(admin_cmd(pattern=f"windows", outgoing=True))
 async def _(event):
     if event.fwd_from:
         return
