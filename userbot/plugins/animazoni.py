@@ -10,10 +10,10 @@
 import asyncio
 from telethon import events
 from userbot import bot
-from userbot.system import dev_cmd
+from userbot.system import admin_cmd
 
 
-@bot.on(dev_cmd(pattern=f"bombs", outgoing=True))
+@bot.on(admin_cmd(pattern=f"bombs", outgoing=True))
 async def _(event):
     if event.fwd_from:
         return 
@@ -39,7 +39,7 @@ async def _(event):
     await asyncio.sleep(2)
     
 
-@bot.on(dev_cmd(pattern=f"fuck", outgoing=True))
+@bot.on(admin_cmd(pattern=f"fuck", outgoing=True))
 async def _(event):
     if event.fwd_from:
         return
@@ -65,7 +65,7 @@ async def _(event):
             await event.edit(animation_chars[i % 4])
 
 
-@bot.on(dev_cmd(pattern="love", outgoing=True))
+@bot.on(admin_cmd(pattern="love", outgoing=True))
 async def _(event):
     if event.fwd_from:
         return
@@ -94,7 +94,7 @@ async def _(event):
             await event.edit(animation_chars[i % 10])
 
 
-@bot.on(dev_cmd(pattern=f"kiss", outgoing=True))
+@bot.on(admin_cmd(pattern=f"kiss", outgoing=True))
 async def _(event):
     if event.fwd_from:
         return
@@ -120,7 +120,7 @@ async def _(event):
             await event.edit(animation_chars[i % 4])
 
 
-@bot.on(dev_cmd(pattern="pornhub", outgoing=True))
+@bot.on(admin_cmd(pattern="pornhub", outgoing=True))
 async def _(event):
     if event.fwd_from:
         return
@@ -154,7 +154,7 @@ async def _(event):
             await event.edit(animation_chars[i % 10])
 
 
-@bot.on(dev_cmd(pattern=f"sex", outgoing=True))
+@bot.on(admin_cmd(pattern=f"sex", outgoing=True))
 async def _(event):
     if event.fwd_from:
         return
@@ -180,7 +180,7 @@ async def _(event):
             await event.edit(animation_chars[i % 4])
 
 
-@bot.on(dev_cmd(pattern="sexy", outgoing=True))
+@bot.on(admin_cmd(pattern="sexy", outgoing=True))
 async def _(event):
     if event.fwd_from:
         return
